@@ -38,7 +38,7 @@ function App() {
 }
 ```
 
-Explore the full list of snippets in [snippets.md](/src/SNIPPETS)
+Explore the full list of snippets in [snippets.md](https://github.com/sanjeetk-dev/acode-snipeets-manager/blob/main/src/SNIPPETS.md)
 
 ## 🙌 Contribute
 Feel free to add new snippets or suggest improvements!
