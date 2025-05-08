@@ -1,25 +1,8 @@
 import plugin from '../plugin.json';
-const DialogBox = acode.require('dialogBox');
 const { snippetManager } = ace.require("ace/snippets");
 import { snippets, htmlTags } from "./snippets.js";
 
 const { editor } = editorManager;
-
-const commandList = [
-  {
-    name: 'example-plugin',
-    key: { win: 'Ctrl-E', mac: 'Command-E' },
-    exec: () => {
-      const myDialogBox = DialogBox(
-        'Title',
-        '<h1>Dialog content</h1>',
-        'hideButtonText',
-        'cancelButtonText'
-      );
-      myDialogBox.show();
-    }
-  }
-];
 
 function getCurrentFileType(session) {
   const sessionNme = session.getMode().$id;
@@ -80,7 +63,7 @@ class AcodeSnippetsManagaer {
     editor.completers.unshift(this.reactCompleter);
   }
 
-  init() {
+  async init() {
     acode.addIcon("snippet-icon", this.baseUrl + "icon.png");
   }
 
@@ -89,22 +72,6 @@ class AcodeSnippetsManagaer {
       editor.completers.indexOf(this.reactCompleter),
       1
     );
-  }
-}
-
-function addCommands(commandsList) {
-  for (const cmd of commandsList) {
-    editor.commands.addCommand({
-      name: cmd.name,
-      bindKey: { win: cmd.key.win, mac: cmd.key.mac },
-      exec: cmd.exec,
-    });
-  }
-}
-
-function removeCommands(commandsList) {
-  for (const cmd of commandsList) {
-    editor.commands.removeCommand(cmd.name);
   }
 }
 
@@ -121,6 +88,5 @@ if (window.acode) {
 
   acode.setPluginUnmount(plugin.id, () => {
     acodePlugin.destroy();
-    removeCommands(commandList);
   });
 }
