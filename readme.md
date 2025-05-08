@@ -1,4 +1,4 @@
-# 🚀 @your-scope/snippets
+# 🚀 @snippets
 
 A collection of modern, reusable, and developer-friendly **code snippets** designed to boost productivity and consistency across your projects.
 
