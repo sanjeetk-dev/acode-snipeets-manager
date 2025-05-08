@@ -1,6 +1,6 @@
 {
-  "id": "acode.plugin",
-  "name": "Plugin",
+  "id": "acode.plugin.snippetManager.sanjeet",
+  "name": "snippets",
   "main": "main.js",
   "version": "1.0.0",
   "readme": "readme.md",
@@ -12,8 +12,8 @@
   "keywords": [],
   "price": 0,
   "author": {
-    "name": "",
+    "name": "Sanjeet Kumar",
     "email": "",
-    "github": ""
+    "github": "https://github.com/sanjeetk-dev"
   }
 }
